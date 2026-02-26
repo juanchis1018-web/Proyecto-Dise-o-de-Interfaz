@@ -38,4 +38,4 @@ El repositorio contiene:
 
 ## Link del prototipo en Figma
 
-Pegar aquí el link de Figma
+https://www.figma.com/design/YVeR5lCisH376KmUf9Yaf0/Sin-t%C3%ADtulo?node-id=0-1&p=f&t=DBPLR4O5tEPlS3zP-0 
