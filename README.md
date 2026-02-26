@@ -1,4 +1,4 @@
-# Proyecto-Dise-o-de-Interfaz
+# Proyecto Diseño de Interfaz
 Proyecto de arquitectura de la información - UX
 
 # Sistema de Recomendación Académica y Profesional
