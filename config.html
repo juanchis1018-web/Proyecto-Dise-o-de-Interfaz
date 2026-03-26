@@ -1,0 +1,25 @@
+<div class="mb-3">
+    <button class="btn btn-dark" onclick="irDashboard()">⬅ Volver al Dashboard</button>
+</div>
+
+<script>
+function irDashboard(){
+    window.location.href = "dashboard.html";
+}
+</script>
+<h3>Configuración</h3>
+
+<button onclick="modoOscuro()">Modo Oscuro</button>
+<button onclick="borrarTodo()">Borrar Datos</button>
+
+<script>
+function modoOscuro(){
+    document.body.style.background = "black";
+    document.body.style.color = "white";
+}
+
+function borrarTodo(){
+    localStorage.removeItem("estudiantes");
+    alert("Datos eliminados");
+}
+</script>

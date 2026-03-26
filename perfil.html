@@ -1,0 +1,21 @@
+<div class="mb-3">
+    <button class="btn btn-dark" onclick="irDashboard()">⬅ Volver al Dashboard</button>
+</div>
+
+<script>
+function irDashboard(){
+    window.location.href = "dashboard.html";
+}
+</script>
+<h3>Perfil</h3>
+
+<input id="user" placeholder="Usuario">
+<button onclick="guardar()">Guardar</button>
+
+<script>
+function guardar(){
+    let user = document.getElementById("user").value;
+    localStorage.setItem("usuario", user);
+    alert("Guardado");
+}
+</script>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Reportes</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body {
+    background: linear-gradient(135deg, #43cea2, #185a9d);
+    color: white;
+}
+
+.card {
+    border-radius: 15px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container mt-5">
+
+    <button class="btn btn-dark mb-3" onclick="volver()">⬅ Dashboard</button>
+
+    <h2>📊 Reportes de Estudiantes</h2>
+
+    <div class="card p-3 mb-3 text-dark">
+        <input id="buscarID" class="form-control mb-2" placeholder="Ingrese ID del estudiante">
+        <button class="btn btn-primary" onclick="buscar()">Buscar</button>
+    </div>
+
+    <div id="resultado" class="card p-3 text-dark"></div>
+
+</div>
+
+<script>
+
+let estudiantes = JSON.parse(localStorage.getItem("estudiantes")) || [];
+
+function buscar() {
+    let id = document.getElementById("buscarID").value;
+    let est = estudiantes.find(e => e.idEstudiante == id);
+
+    if (!est) {
+        document.getElementById("resultado").innerHTML = "No encontrado";
+        return;
+    }
+
+    let html = `
+        <h4>${est.nombre}</h4>
+        <p>Curso: ${est.curso}</p>
+        <h5>Materias:</h5>
+    `;
+
+    est.materias.forEach(m => {
+        html += `
+            <p>${m.nombre} | C1: ${m.corte1} | C2: ${m.corte2}</p>
+        `;
+    });
+
+    document.getElementById("resultado").innerHTML = html;
+}
+
+function volver() {
+    window.location.href = "dashboard.html";
+}
+
+</script>
+
+</body>
+</html>
